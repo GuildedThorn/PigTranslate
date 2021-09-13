@@ -147,9 +147,6 @@ class PigTranslate extends PluginBase implements Listener
         $this->container[0]['runThread'] = false;
     }
 
-    /**
-     * @return PigTranslate|void
-     */
     function onLoad() : void
     {
         self::$instance = $this;

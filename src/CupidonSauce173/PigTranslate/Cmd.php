@@ -15,7 +15,7 @@ use function implode;
 class Cmd extends Command
 {
 
-    public function __construct()
+    function __construct()
     {
         parent::__construct(
             'language',
@@ -25,7 +25,7 @@ class Cmd extends Command
         $this->setPermission('PigTranslate.permission.language');
     }
 
-    public function execute(CommandSender $sender, string $commandLabel, array $args)
+    function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if (!isset($args[0])) {
             $sender->sendMessage(
@@ -54,7 +54,10 @@ class Cmd extends Command
         return;
     }
 
-    public function getPlugin(): Plugin
+    /**
+     * @return Plugin
+     */
+    function getPlugin(): Plugin
     {
         return PigTranslate::getInstance();
     }
